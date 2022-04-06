@@ -142,7 +142,7 @@ class SilhouetteVisualizer(ClusteringScoreVisualizer):
         self.n_clusters_ = self.estimator.n_clusters
 
         # Compute the scores of the cluster
-        labels = self.estimator.predict(X)
+        labels = self.estimator.predict(X, **kwargs)
         self.silhouette_score_ = silhouette_score(X, labels)
         self.silhouette_samples_ = silhouette_samples(X, labels)
 
